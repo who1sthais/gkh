@@ -1,0 +1,312 @@
+<%- include('partials/header') %>
+
+<!-- Inclusão da CDN do Font Awesome no head -->
+<head>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+
+<section id="contact">
+  <h1>Fale conosco!</h1>
+  
+  <div class="contact-wrapper">
+  
+    <!-- Left contact page --> 
+    <form id="contact-form" class="form-horizontal" role="form">
+      <div class="form-group">
+        <div class="col-sm-12">
+          <label for="nome">Nome:</label>
+          <input type="text" class="form-control" id="name" placeholder="Seu nome" name="nome" value="" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-12">
+          <label for="email">E-mail:</label>
+          <input type="email" class="form-control" id="email" placeholder="Email@email.com" name="email" value="" required>
+        </div>
+      </div>
+
+      <label for="email">Mensagem</label>
+      <textarea class="form-control" rows="10" placeholder="Escreva sua mensagem" name="mensagem" required></textarea>
+      
+      <button class="btn btn-danger send-button" id="submit" type="submit" value="enviar">
+        <div class="alt-send-button">
+          <!-- Usando a classe do Font Awesome corretamente -->
+          <i class="fas fa-paper-plane"></i><span class="send-text">ENVIAR</span>
+        </div>
+      </button>
+    </form>
+    
+    <!-- Right contact page --> 
+    <div class="direct-contact-container"> 
+      <h2>Nos acompanhe pelas redes sociais</h2>
+      <hr>
+      <ul class="social-media-list">
+        <li>
+          <a href="https://github.com/laliahaidara/IntegraIF-HUB" target="_blank" class="contact-icon">
+          <i class="fab fa-github" aria-hidden="true"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/integra-if-hub/" target="_blank" class="contact-icon">
+          <i class="fab fa-linkedin" aria-hidden="true"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/integraif.hub/" target="_blank" class="contact-icon">
+          <i class="fab fa-instagram" aria-hidden="true"></i>
+          </a>
+        </li>
+      </ul>
+      <ul class="contact-list">
+        <li class="list-item">
+          <!-- A classe 'fa-envelope' é usada corretamente para ícone de e-mail -->
+          <i class=""><span class="contact-text gmail"><a href="mailto:integraif.hub@gmail.com" title="Nos mande um email">integraif.hub@gmail.com</a></span></i>
+        </li>
+      </ul>
+      <hr>
+    </div>
+  </div>
+  
+</section>  
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  display: left;
+  flex-direction: column;
+  min-height: 100vh; /* Garantir que o conteúdo ocupe a altura total */
+    background-image: url('img/bg4x/bg@4x.webp'); /* Substitua pelo caminho da sua imagem */
+    background-size: 45%; /* Mantém o tamanho original da imagem */
+    background-repeat: no-repeat; /* Impede que a imagem se repita */
+    background-position: left bottom; /* Posiciona no canto superior esquerdo */
+    background-color: #ffff; /* Cor de fundo como fallback */
+
+}
+
+#contact {
+  flex-grow: 1; /* O conteúdo cresce para ocupar o espaço restante */
+}
+
+h1 {
+  margin: 40px;
+  padding-bottom: 20px;
+  font-family: 'Sora', sans-serif;
+  font-weight: 400;
+  font-size: 45px;
+  color: #000000;
+  text-align: center;
+}
+
+h2 {
+  font-size: 20px;
+  color: #000000;
+}
+
+label{
+  font-family: 'Sora', sans-serif;
+  font-weight: 500;
+  font-size: larger;
+  color: #000000;
+}
+
+.btn-danger{
+  background-color: #271491;
+  border-color: #271491;
+}
+
+.contact-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+  max-width: 840px;
+  margin-bottom: 40px; /* Aumenta o espaço inferior */
+}
+
+.form-horizontal {
+  max-width: 400px;
+  font-family: 'Lato';
+  font-weight: 400;
+  margin-bottom: 40px; /* Aumenta o espaço abaixo do formulário */
+}
+
+.form-control, 
+textarea {
+  max-width: 400px;
+  background-color: #ffff;
+  font-style: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 1px;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.send-button {
+  margin-top: 15px;
+  height: 34px;
+  width: 400px;
+  overflow: hidden;
+  transition: all .2s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.alt-send-button {
+  width: 400px;
+  height: 34px;
+  padding-top: 5px;
+  transition: all .2s ease-in-out;
+}
+
+.send-text {
+  display: block;
+  margin-top: 10px;
+  font: 700 12px 'Lato', sans-serif;
+  letter-spacing: 2px;
+}
+
+.alt-send-button:hover {
+  transform: translate3d(0px, -29px, 0px);
+}
+
+.direct-contact-container {
+  max-width: 400px;
+  margin-top: 40px;
+}
+
+.contact-list {
+  list-style-type: none;
+  margin-left: -30px;
+  padding-right: 20px;
+}
+
+.list-item {
+  line-height: 4;
+  color: #fff;
+}
+
+.contact-text {
+  font: 300 18px 'Lato', sans-serif;
+  letter-spacing: 1.9px;
+  color: #fff;
+}
+
+.place {
+  margin-left: 62px;
+}
+
+.gmail {
+  margin-left: 53px;
+}
+
+.contact-text a {
+  color: #000000;
+  text-decoration: none;
+  transition-duration: 0.2s;
+}
+
+.contact-text a:hover {
+  color: #271491;
+  text-decoration: none;
+}
+
+
+.social-media-list {
+  position: relative;
+  font-size: 30px;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.social-media-list li {
+  position: relative; 
+  display: inline-block;
+  height: 80px;
+  width: 80px;
+  margin: 10px 5px;
+  line-height: 80px;
+  border-radius: 50%;
+  color: #fff;
+  background-color: rgb(27,27,27);
+  cursor: pointer; 
+  transition: all .2s ease-in-out;
+}
+
+.social-media-list li:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  border-radius: 50%;
+  opacity: 0;
+  box-shadow: 0 0 0 1px #fff;
+  transition: all .2s ease-in-out;
+}
+
+.social-media-list li:hover {
+  background-color: #fff; 
+}
+
+.social-media-list li:hover:after {
+  opacity: 1;  
+  transform: scale(1.12);
+}
+
+.social-media-list li a {
+  color: #fff;
+  font-size: 30px;
+}
+
+.social-media-list li:hover a {
+  color: #271491;
+}
+
+
+hr {
+  border-color: #271491;
+}
+
+/* Media Queries */
+@media screen and (max-width: 850px) {
+  .contact-wrapper {
+    display: block;
+  }
+
+  .send-button {
+    width: 100%;
+  }
+  .alt-send-button {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .contact-wrapper {
+    display: block;
+    padding: 5px;
+  }
+}
+</style>
+
+<script>
+  document.querySelector('#contact-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    e.target.elements.name.value = '';
+    e.target.elements.email.value = '';
+    e.target.elements.message.value = '';
+  });
+</script>
+
+<%- include('partials/footer') %> 

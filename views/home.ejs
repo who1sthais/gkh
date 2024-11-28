@@ -1,0 +1,143 @@
+<%- include('partials/header') %>
+
+<div class="container mt-5">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <h1> Nossas Empresas Juniores</h1>  
+  <h2 class="custom-heading">
+      Seja bem-vindo ao começo de grandes projetos e conexões. 
+      No Integra IF você pode iniciar, crescer e inovar. Cadastre-se já ou saiba mais!
+    </h2>
+
+    <div class="center-container">
+  <a href="/about">
+    <button class="btn btn-outline-danger btn-lg sobre-nos-btn">Quem somos</button>
+  </a>
+</div>
+  <!-- Adicionado maior espaçamento -->
+  <div style="margin-bottom: 50px;"></div>
+  <div class="row">
+    <% if (projects && projects.length > 0) { %>
+      <% projects.forEach(project => { %>
+        <div class="col-md-4 mb-4">
+          <div class="card shadow-lg" style="border-radius: 20px; overflow: hidden;">
+            <div class="card-body">
+              <img src="img/codamais.jpeg" class="card-img-top" alt="Imagem do projeto" style="border-top-left-radius: 20px; border-top-right-radius: 20px;">
+              <div class="card-info">
+                <h5 class="card-title text-dark">CODA+</h5>
+                <p class="card-text">Empresa júnior de tecnologia fundada no IFB pelos alunos do curso de Tecnologia em Sistemas para Internet</p>
+                <a href="https://www.instagram.com/codamais_/" target="_blank" class="btn btn-primary">Saiba mais</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% }); %>
+    <% } else { %>
+      <p class="text-center text-secondary">Nenhum projeto disponível no momento.</p>
+    <% } %>
+  </div>
+</div>
+
+<%- include('partials/footer') %>
+
+<!-- Estilos atualizados -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+body {
+    background-color: #ffff; /* Cor de fundo como fallback */
+    font-family: "Poppins", sans-serif;
+}
+
+.custom-heading {
+  font-size: 1.4rem;
+  color: #333;
+  background-color: #f8f9fa;
+  padding: 15px;
+  margin-top: 100px;
+  margin-bottom: 10px;
+  border-right: 5px solid #323eba;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.center-container {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  height: 10vh;
+}
+
+
+.sobre-nos-btn {
+  font-size: 1.1rem;
+  padding: 10px 20px;
+  border-radius: 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.sobre-nos-btn:hover {
+  background-color: #d9043d;
+  color: #fff;
+  transform: scale(1.1); /* Aumenta o botão ao passar o mouse */
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  transition: transform 0.9s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px) scale(1.05); /* Efeito de aumentar e elevar */
+  box-shadow: 0 16px 24px rgba(0, 0, 0, 0.2); /* Sombra mais pronunciada */
+}
+
+.card-info {
+  position: relative;
+  z-index: 2;
+  padding: 20px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border-radius: 20px;
+}
+
+.card-info h5 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #000;
+  transition: transform 0.3s ease;
+}
+
+.card-info p {
+  font-size: 0.9rem;
+  color: #555;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-info {
+  transform: scale(1.05);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary {
+  font-size: 0.9rem;
+  padding: 8px 15px;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+  background-color: #323eba;
+  border-color: #323eba;
+}
+
+.btn-primary:hover {
+  background-color: #d9043d;
+  border-color: #d9043d;
+}
+
+/* Estilo de transição suave para o conteúdo do card */
+.card-info h5, .card-info p, .btn-primary {
+  transition: transform 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+}
+
+.container p {
+  margin-bottom: 50px; /* Espaçamento aumentado */
+}
+</style>
